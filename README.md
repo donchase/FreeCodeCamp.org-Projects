@@ -1,2 +1,2 @@
 # FreeCodeCamp.org-Projects
- Interesting projects and assignements from FreeCodeCamp.org
+ Interesting projects and assignments from FreeCodeCamp.org
