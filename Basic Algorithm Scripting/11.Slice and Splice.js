@@ -1,5 +1,7 @@
 /*
 ASSIGNMENT:
+Basic Algorithm Scripting: Slice and Splice: Passed
+
 You are given two arrays and an index.
 
 Copy each element of the first array into the second array, in order.
