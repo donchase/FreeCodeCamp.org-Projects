@@ -14,7 +14,15 @@ bouncer([null, NaN, 1, 2, undefined]) should return [1, 2].
 */
 
 function bouncer(arr) {
-    return arr;
+    let returnArr = [];
+    let element;
+    for (element in arr) {
+        //console.log(arr[element]);
+        if (arr[element]) {
+            returnArr.push(arr[element]);
+        }
+    }
+    return returnArr;
 }
 
 console.log(bouncer([7, "ate", "", false, 9])); // [7, "ate", 9]
