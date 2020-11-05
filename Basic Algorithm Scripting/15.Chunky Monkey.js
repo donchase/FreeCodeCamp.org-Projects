@@ -1,6 +1,7 @@
 /*
 ASSIGNMENT:
-Basic Algorithm Scripting: Chunky Monkey
+Basic Algorithm Scripting: Chunky Monkey: Passed
+
 Write a function that splits an array (first argument) into groups 
 the length of size (second argument) and returns them as a two-dimensional array.
 
@@ -15,7 +16,20 @@ chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) should return [[0, 1], [2, 3]
 */
 
 function chunkArrayInGroups(arr, size) {
-    return arr;
+    let returnArr = [];
+    let pushArr = [];
+    let element;
+    for (element in arr) {
+        pushArr.push(arr[element]);
+        if (pushArr.length == size) {
+            returnArr.push(pushArr);
+            pushArr = [];
+        }
+    }
+    if (pushArr.length > 0) {
+        returnArr.push(pushArr);
+    }
+    return returnArr;
 }
 
 console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2)); // [["a", "b"], ["c", "d"]]
