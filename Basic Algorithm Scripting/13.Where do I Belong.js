@@ -34,8 +34,8 @@ function getIndexToIns(arr, num) {
     // sort arr
     let sortedArr = arr.sort(function(a, b) { return a - b });
     // find 1st number larger than num
-    //return index of 1st number larger than num
-    //console.log(sortedArr);
+    // return index of 1st number larger than num
+    // console.log(sortedArr);
     for (let i = 0; i < sortedArr.length; i++) {
         if (sortedArr[i] >= num) {
             return i;
