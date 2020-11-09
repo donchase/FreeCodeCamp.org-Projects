@@ -1,7 +1,7 @@
 "use strict";
 /*
 ASSIGNMENT:
-Functional Programming: Refactor Global Variables Out of Functions
+Functional Programming: Refactor Global Variables Out of Functions: Passed
 So far, we have seen two distinct principles for functional programming:
 
 1) Don't alter a variable or object - create new variables and objects and return them if need be from a function.
