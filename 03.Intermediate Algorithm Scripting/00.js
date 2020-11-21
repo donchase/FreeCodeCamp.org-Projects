@@ -5,7 +5,7 @@ ASSIGNMENT:
 TESTS:
 
 */
-
+"use strict";
 
 
 console.log();
