@@ -65,6 +65,9 @@ function checkCashRegister(price, cash, cid) {
 }
 
 function calculateChange(changeDue, cid) {
+    let changeDueBack = 0;
+    let changeAvailable = 0;
+    changeDueBack += changeDue;
     let change = [
         ["PENNY", 0],
         ["NICKEL", 0],
@@ -119,14 +122,20 @@ function calculateChange(changeDue, cid) {
                 changeDue -= 0.05;
                 change[1][1] += 0.05;
                 break;
-            case changeDue >= 0.01 && cid[0][1] > 0:
+            case changeDue >= 0.01:
                 cid[0][1] -= 0.01;
                 changeDue -= 0.01;
                 change[0][1] += 0.01;
                 break;
         }
     }
-    //console.log(cid);
+    for (let i = 0; i <= 8; i++) {
+        changeAvailable += change[i][1];
+        changeAvailable = +changeAvailable.toFixed(2);
+    }
+    if (changeAvailable != changeDueBack) {
+        return false;
+    }
     return change;
 }
 
