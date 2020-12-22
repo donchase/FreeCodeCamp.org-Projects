@@ -11,3 +11,41 @@ Finally, use the ul to map over the array of messages and render it to the scree
 
 "use strict";
 
+class DisplayMessages extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            input: '',
+            messages: []
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.submitMessage = this.submitMessage.bind(this);
+    }
+    // Add handleChange() and submitMessage() methods here
+    handleChange(event) {
+        this.setState({
+            input: event.target.value
+        });
+    }
+    submitMessage() {
+        const newMessageArray = this.state.messages.concat([this.state.input]);
+        this.setState({
+            messages: newMessageArray,
+            input: ''
+        });
+    }
+
+    render() {
+        const messageList = this.state.messages.map(x => <li>{x}</li>);
+        return (
+            <div>
+                <h2>Type in a new Message:</h2>
+                { /* Render an input, button, and ul below this line */}
+                <input value={this.state.input} onChange={this.handleChange} />
+                <button type='submit' onClick={this.submitMessage}>Click Here</button>
+                <ul>{messageList}</ul>
+                { /* Change code above this line */}
+            </div>
+        );
+    }
+};
