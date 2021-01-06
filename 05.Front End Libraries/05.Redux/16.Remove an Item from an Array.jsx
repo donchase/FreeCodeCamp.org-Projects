@@ -22,7 +22,7 @@ const removeItem = (index) => {
         type: 'REMOVE_ITEM',
         index
     }
-}
+};
 
 const store = Redux.createStore(immutableReducer);
 
