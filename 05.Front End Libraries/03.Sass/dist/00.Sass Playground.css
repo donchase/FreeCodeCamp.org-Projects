@@ -1,3 +1,4 @@
+/* 01 Store Data with Sass Variables */
 .header {
   text-align: center;
 }
@@ -5,4 +6,122 @@
 .blog-post,
 h2 {
   color: red;
+}
+
+/* 02 Nest CSS with Sass */
+.blog-post h1 {
+  text-align: center;
+  color: blue;
+}
+.blog-post p {
+  font-size: 20px;
+}
+
+/* 03 Create Reusable CSS with Mixins */
+#awesome {
+  width: 150px;
+  height: 150px;
+  background-color: green;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+}
+
+/* 04 Use @if and @else to Add Logic To Your Styles */
+#box {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  border: 3px solid black;
+}
+
+/* 05 Use @for to Create a Sass Loop */
+.text-1 {
+  font-size: 15px;
+}
+
+.text-2 {
+  font-size: 30px;
+}
+
+.text-3 {
+  font-size: 45px;
+}
+
+.text-4 {
+  font-size: 60px;
+}
+
+.text-5 {
+  font-size: 75px;
+}
+
+/* 06 Use @each to Map Over Items in a List */
+/* Iterate over a list */
+.blue-bg {
+  background-color: blue;
+}
+
+.black-bg {
+  background-color: black;
+}
+
+.red-bg {
+  background-color: red;
+}
+
+/* Iterate over a map */
+.pink-background {
+  background-color: pink;
+}
+
+.yellow-background {
+  background-color: yellow;
+}
+
+.green-background {
+  background-color: green;
+}
+
+div {
+  height: 200px;
+  width: 200px;
+}
+
+/* 07 Apply a Style Until a Condition is Met with @while */
+.text-6 {
+  font-size: 30px;
+}
+
+.text-7 {
+  font-size: 35px;
+}
+
+.text-8 {
+  font-size: 40px;
+}
+
+.text-9 {
+  font-size: 45px;
+}
+
+.text-10 {
+  font-size: 50px;
+}
+
+/* 08 Split Your Styles into Smaller Chunks with Partials */
+/* 09 Extend One Set of CSS Styles to Another Element */
+h3 {
+  text-align: center;
+}
+
+.info, .info-important {
+  width: 200px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.info-important {
+  background-color: magenta;
 }

@@ -1,3 +1,5 @@
+/* 01 Store Data with Sass Variables */
+
 $text-color: red;
 .header {
     text-align: center;
@@ -6,4 +8,132 @@ $text-color: red;
 .blog-post,
 h2 {
     color: $text-color;
+}
+
+
+/* 02 Nest CSS with Sass */
+
+.blog-post {
+    h1 {
+        text-align: center;
+        color: blue;
+    }
+    p {
+        font-size: 20px;
+    }
+}
+
+
+/* 03 Create Reusable CSS with Mixins */
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+#awesome {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    @include border-radius(15px);
+}
+
+
+/* 04 Use @if and @else to Add Logic To Your Styles */
+
+@mixin border-stroke($val) {
+    @if $val==light {
+        border: 1px solid black;
+    }
+    @else if $val==medium {
+        border: 3px solid black;
+    }
+    @else if $val==heavy {
+        border: 6px solid black;
+    }
+    @else {
+        border: none;
+    }
+}
+
+#box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+}
+
+
+/* 05 Use @for to Create a Sass Loop */
+
+@for $j from 1 to 6 {
+    .text-#{$j} {
+        font-size: 15px * $j
+    }
+}
+
+
+/* 06 Use @each to Map Over Items in a List */
+
+
+/* Iterate over a list */
+
+@each $hue in blue,
+black,
+red {
+    .#{$hue}-bg {
+        background-color: $hue;
+    }
+}
+
+
+/* Iterate over a map */
+
+$colors: (color1: pink, color2: yellow, color3: green);
+@each $key,
+$color in $colors {
+    .#{$color}-background {
+        background-color: $color;
+    }
+}
+
+div {
+    height: 200px;
+    width: 200px;
+}
+
+
+/* 07 Apply a Style Until a Condition is Met with @while */
+
+$x: 6;
+@while $x < 11 {
+    .text-#{$x} {
+        font-size: 5px * $x;
+    }
+    $x: $x+1;
+}
+
+
+/* 08 Split Your Styles into Smaller Chunks with Partials */
+
+// @import 'variables'
+// imports from _variables.scss
+
+/* 09 Extend One Set of CSS Styles to Another Element */
+
+h3 {
+    text-align: center;
+}
+
+.info {
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.info-important {
+    @extend .info;
+    background-color: magenta;
 }
